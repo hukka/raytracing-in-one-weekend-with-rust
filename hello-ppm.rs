@@ -1,10 +1,7 @@
 use std::io::Write;
 
 fn arg(target : &str) -> bool {
-    return match std::env::args().find(|x| x == target) {
-        Some(_) => true,
-        None => false,
-    };
+    return std::env::args().any(|x| x == target);
 }
 
 fn main() {
